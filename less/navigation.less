@@ -1,27 +1,21 @@
 // Navigation Styles here
 .nav-bar {
-    .flex(@align:baseline);
+    .flex(space-between);
     border-bottom: 2px dashed @navigation-border;
     margin-top: 2%;
     padding-bottom: 2%;
-
-    h1{
-        width: 55%;
-        display:inline-block;
-    }
+    width: 100%;
 
     nav{
         .flex(space-between);
-        display:inline-block;
         width:44%;
     }
 
     nav a{
         text-decoration: none;
-        width: 24%;
-        display:inline-block;
         font-size:@font-small;
         color: black;
         text-align:center;
+        line-height:@font-huge;
     }
 }
