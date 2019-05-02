@@ -1,1 +1,33 @@
 // Mixins in here
+
+.flex (@justify: center; @align: center; @direction: row; @wrap: nowrap){
+    display: flex;
+    justify-content: @justify;
+    flex-direction: @direction;
+    flex-wrap: @wrap;
+    align-content: @align;
+}
+
+.button-design (@color; @font-color; @font-size; @radius; @top: 3%; @bottom: 3%){
+    background-color: @color;
+    color: @font-color;
+    font-size: @font-size;
+    border-radius: @radius;
+    padding-top: @top;
+    padding-bottom: @bottom;
+}
+
+.animation(@name; @duration:3s; @delay:0s; @count:infinite; @way:normal; @timing:linear){
+    animation-name: @name;
+    animation-duration: @duration; 
+    animation-delay: @delay;  
+    animation-iteration-count: @count;
+    animation-direction: @way;
+    animation-timing-function: @timing;  
+}
+
+.keyframes(@name; @rules){
+    @keyframes @name {
+        @rules();
+    }
+}

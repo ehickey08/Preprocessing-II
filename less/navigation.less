@@ -1,1 +1,47 @@
 // Navigation Styles here
+.nav-bar {
+    .flex(space-between);
+    border-bottom: 2px dashed @navigation-border;
+    margin-top: 2%;
+    padding-bottom: 2%;
+    width: 100%;
+    padding-left: calc((100% - @container-width-desktop)/2);
+    padding-right: calc((100% - @container-width-desktop)/2);
+
+    @media @mobile {
+        .flex(@direction:column);
+    }
+
+    h1 {
+        .animation(@spin-in, 5s, @delay:1s, @count: 1, @way:reverse, @timing:ease);
+        
+        @media @mobile {
+            text-align: center;
+            font-size:@font-large;
+        }
+    }
+    nav{
+        .flex(space-around);
+        width:44%;
+        @media @mobile {
+            width: 100%;
+            margin-top: 2%;
+        }
+    }
+
+    nav a{
+        text-decoration: none;
+        font-size:@font-small;
+        color: black;
+        text-align:center;
+        line-height:@font-huge;
+
+        &:hover{
+            text-decoration: underline;
+            transform: scale(1.1);
+        }
+        @media @mobile{
+            line-height: 2.0rem;
+        }
+    }
+}

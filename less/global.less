@@ -15,22 +15,22 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: @font-huge;
 }
 
 h2 {
-  font-size: 3.2rem;
+  font-size: @font-large;
   padding-bottom: 10px;
 }
 
 h4 {
-  font-size: 2.5rem;
+  font-size: @font-medium;
   padding-bottom: 10px;
 }
 
 p {
   line-height: 1.5;
-  font-size: 1.6rem;
+  font-size: @font-small;
   padding-bottom: 10px;
 }
 
@@ -40,7 +40,72 @@ img {
 }
 
 .container {
-  max-width: 800px;
+  max-width: @container-width-desktop;
   width: 100%;
   margin: 0 auto;
+
+  @media @mobile {
+      max-width: @container-width-mobile;
+  }
+}
+
+//creating animations
+.keyframes(@spin-in, {
+    0%{
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(20deg);
+        left:0px;
+    }
+    50%{
+        transform: rotate(-20deg);
+        margin-left:250px;
+        font-weight: bold;
+        background:yellow;
+    }
+    75%{
+        transform: rotate(0deg);
+        margin-left:250px;
+        font-weight:bolder;
+        
+    }
+    100%{
+        transform: rotate(-360deg);
+        left:0px;
+    }
+});
+
+//animation needs to be altered for mobile or else it goes off screen
+@media @mobile{
+    .keyframes(@spin-in, {
+        0%{
+            transform: rotate(0deg);
+            padding: 0;
+        }
+        25% {
+            transform: rotate(20deg);
+            left:0px;
+            padding: 0;
+        }
+        50%{
+            transform: rotate(-20deg);
+            margin-left:250px;
+            font-weight: bolder;
+            background:yellow;
+            padding: 0;
+        }
+        75%{
+            transform: rotate(0deg);
+            margin-left:250px;
+            font-weight:bold;
+            padding:0;
+            
+        }
+        100%{
+            transform: rotate(-360deg);
+            margin-left:-50%;
+            padding:0;
+        }
+    });
 }
