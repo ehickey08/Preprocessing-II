@@ -40,7 +40,11 @@ img {
 }
 
 .container {
-  max-width: 800px;
+  max-width: @container-width-desktop;
   width: 100%;
   margin: 0 auto;
+
+  @media @mobile {
+      max-width: @container-width-mobile;
+  }
 }

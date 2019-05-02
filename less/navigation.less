@@ -5,10 +5,26 @@
     margin-top: 2%;
     padding-bottom: 2%;
     width: 100%;
+    padding-left: calc((100% - @container-width-desktop)/2);
+    padding-right: calc((100% - @container-width-desktop)/2);
 
+    @media @mobile {
+        .flex(@direction:column);
+    }
+
+    h1 {
+        @media @mobile {
+            text-align: center;
+            font-size:@font-large;
+        }
+    }
     nav{
-        .flex(space-between);
+        .flex(space-around);
         width:44%;
+        @media @mobile {
+            width: 100%;
+            margin-top: 2%;
+        }
     }
 
     nav a{
@@ -17,5 +33,9 @@
         color: black;
         text-align:center;
         line-height:@font-huge;
+
+        @media @mobile{
+            line-height: 2.0rem;
+        }
     }
 }
